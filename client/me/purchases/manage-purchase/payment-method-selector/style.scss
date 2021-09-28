@@ -48,7 +48,9 @@
 }
 
 .payment-method-selector__all-subscriptions-checkbox-label {
-	margin-bottom: 1.5em;
+	&.form-label {
+		margin-bottom: 1.5em;
+	}
 }
 
 .form-checkbox.payment-method-selector__all-subscriptions-checkbox {
