@@ -83,4 +83,12 @@ export const getContextLinks = () => ( {
 		link: 'https://wordpress.com/support/payment/',
 		post_id: 76237,
 	},
+	autorenewal: {
+		link: 'https://wordpress.com/support/manage-purchases/#automatic-renewal',
+		post_id: 111349,
+	},
+	cancel_purchase: {
+		link: 'https://wordpress.com/support/manage-purchases/#cancel-a-purchase',
+		post_id: 111349,
+	},
 } );
