@@ -171,7 +171,7 @@ function AllSubscriptionsEffectWarning( {
 	if ( useForAllSubscriptions ) {
 		return (
 			<span className="payment-method-selector__all-subscriptions-effect-warning">
-				{ translate( 'This card will be used for future renewals of existing purchases.' ) }
+				{ translate( 'This card will be used for future renewals.' ) }
 			</span>
 		);
 	}
