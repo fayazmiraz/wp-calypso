@@ -175,7 +175,7 @@ function AllSubscriptionsEffectWarning( {
 				{ translate( 'This card will be used for future renewals. {{tosLink/}}', {
 					components: {
 						tosLink: (
-							<ExternalLink icon href="https://wordpress.com/tos/">
+							<ExternalLink icon href="https://wordpress.com/tos/#fees-payments-renewal">
 								Learn More
 							</ExternalLink>
 						),
