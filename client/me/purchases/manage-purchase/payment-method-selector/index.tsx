@@ -10,6 +10,7 @@ import { useTranslate } from 'i18n-calypso';
 import React, { useCallback, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import QueryPaymentCountries from 'calypso/components/data/query-countries/payments';
+import ExternalLink from 'calypso/components/external-link';
 import FormInputCheckbox from 'calypso/components/forms/form-checkbox';
 import FormLabel from 'calypso/components/forms/form-label';
 import { useLocalizedMoment } from 'calypso/components/localized-moment';
@@ -171,7 +172,15 @@ function AllSubscriptionsEffectWarning( {
 	if ( useForAllSubscriptions ) {
 		return (
 			<span className="payment-method-selector__all-subscriptions-effect-warning">
-				{ translate( 'This card will be used for future renewals.' ) }
+				{ translate( 'This card will be used for future renewals. {{tosLink/}}', {
+					components: {
+						tosLink: (
+							<ExternalLink icon href="https://wordpress.com/tos/">
+								Learn More
+							</ExternalLink>
+						),
+					},
+				} ) }
 			</span>
 		);
 	}
