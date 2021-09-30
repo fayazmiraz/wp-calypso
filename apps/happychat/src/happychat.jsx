@@ -1,5 +1,3 @@
-import config from '@automattic/calypso-config';
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Composer from 'calypso/components/happychat/composer';
 import HappychatConnection from 'calypso/components/happychat/connection-connected';
@@ -39,7 +37,6 @@ export default function Happychat() {
 				isCurrentUser={ isMessageFromCurrentUser }
 				isExternalUrl={ isOutsideCalypso }
 				timeline={ timeline }
-				twemojiUrl={ config( 'twemoji_cdn_url' ) }
 			/>
 			<Notices
 				chatStatus={ chatStatus }
