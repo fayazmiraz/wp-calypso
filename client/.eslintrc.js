@@ -17,6 +17,7 @@ module.exports = {
 			files: [ '**/test/**/*' ],
 			rules: {
 				'import/no-nodejs-modules': 'off',
+				'react/react-in-jsx-scope': 'off',
 			},
 		},
 	],

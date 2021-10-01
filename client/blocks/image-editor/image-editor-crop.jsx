@@ -395,7 +395,6 @@ class ImageEditorCrop extends Component {
 					} }
 				/>
 				<Draggable
-					ref="border"
 					onDrag={ this.onBorderDrag }
 					onStop={ this.applyCrop }
 					x={ left }
@@ -422,7 +421,6 @@ class ImageEditorCrop extends Component {
 						top: topBound,
 						left: leftBound,
 					} }
-					ref="topLeft"
 					className={ classNames( handleClassName, handleClassName + '-nwse' ) }
 				/>
 				<Draggable
@@ -437,7 +435,6 @@ class ImageEditorCrop extends Component {
 						top: topBound,
 						right: rightBound,
 					} }
-					ref="topRight"
 					className={ classNames( handleClassName, handleClassName + '-nesw' ) }
 				/>
 				<Draggable
@@ -452,7 +449,6 @@ class ImageEditorCrop extends Component {
 						bottom: bottomBound,
 						right: rightBound,
 					} }
-					ref="bottomRight"
 					className={ classNames( handleClassName, handleClassName + '-nwse' ) }
 				/>
 				<Draggable
@@ -467,7 +463,6 @@ class ImageEditorCrop extends Component {
 						bottom: bottomBound,
 						left: leftBound,
 					} }
-					ref="bottomLeft"
 					className={ classNames( handleClassName, handleClassName + '-nesw' ) }
 				/>
 			</div>
