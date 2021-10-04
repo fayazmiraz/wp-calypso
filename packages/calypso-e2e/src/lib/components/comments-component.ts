@@ -47,7 +47,7 @@ export class CommentsComponent {
 		await this.page.click( selectors.commentTextArea );
 		await this.page.fill( selectors.commentTextArea, comment );
 		await Promise.all( [
-			this.page.waitForNavigation(),
+			this.page.waitForLoadState( 'networkidle' ),
 			this.page.click( selectors.submitButton ),
 		] );
 	}
