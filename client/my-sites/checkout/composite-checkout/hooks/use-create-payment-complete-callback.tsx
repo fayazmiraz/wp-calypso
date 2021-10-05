@@ -109,6 +109,7 @@ export default function useCreatePaymentCompleteCallback( {
 					transactionResult.purchases && Object.keys( transactionResult.purchases ).pop();
 			}
 
+			// TODO: Retrieve and add domains to this list arguments
 			const getThankYouPageUrlArguments = {
 				siteSlug: siteSlug || undefined,
 				adminUrl,

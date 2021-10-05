@@ -34,6 +34,7 @@ export default function useGetThankYouUrl( {
 		const receiptId = transactionResult?.receipt_id;
 		const orderId = transactionResult?.order_id;
 
+		// TODO: Retrieve and add domains to this list arguments
 		const getThankYouPageUrlArguments = {
 			siteSlug,
 			adminUrl,

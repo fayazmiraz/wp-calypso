@@ -6,9 +6,12 @@
 
 import { isEnabled } from '@automattic/calypso-config';
 import {
+	PLAN_BLOGGER,
 	PLAN_ECOMMERCE,
 	JETPACK_REDIRECT_URL,
+	PLAN_PREMIUM,
 	redirectCheckoutToWpAdmin,
+	TITAN_MAIL_MONTHLY_SLUG,
 	WPCOM_DIFM_LITE,
 } from '@automattic/calypso-products';
 import isJetpackCloud from 'calypso/lib/jetpack/is-jetpack-cloud';
@@ -723,7 +726,7 @@ describe( 'getThankYouPageUrl', () => {
 		expect( url ).toBe( '/checkout/thank-you/foo.bar/1234abcd?d=concierge' );
 	} );
 
-	it( 'redirects to thank-you page for a new site with a domain and no failed purchases but neither GSuite nor concierge are in the cart if user is in invalid country', () => {
+	it( 'redirects to thank-you page for a new site with a domain and no failed purchases but neither G Suite nor concierge are in the cart if user is in invalid country', () => {
 		const cart = {
 			products: [
 				{
@@ -852,6 +855,83 @@ describe( 'getThankYouPageUrl', () => {
 			receiptId: '1234abcd',
 		} );
 		expect( url ).toBe( '/checkout/thank-you/foo.bar/1234abcd?d=concierge' );
+	} );
+
+	describe( 'Professional Email upsell', () => {
+		it( 'Is displayed if site has eligible domain and Blogger plan is in the cart', () => {
+			isEnabled.mockImplementation( ( flag ) => flag === 'upsell/professional-email' );
+
+			const cart = {
+				products: [
+					{
+						product_slug: PLAN_BLOGGER,
+					},
+				],
+			};
+
+			const url = getThankYouPageUrl( {
+				...defaultArgs,
+				siteSlug: 'foo.bar',
+				cart,
+				receiptId: '1234abcd',
+			} );
+
+			expect( url ).toBe( '/checkout/offer-professional-email/1234abcd/foo.bar' );
+		} );
+
+		it( 'Is not displayed if cart is missing', () => {
+			isEnabled.mockImplementation( ( flag ) => flag === 'upsell/professional-email' );
+
+			const url = getThankYouPageUrl( {
+				...defaultArgs,
+				siteSlug: 'foo.bar',
+				receiptId: '1234abcd',
+			} );
+
+			expect( url ).toBe( '/checkout/thank-you/foo.bar/1234abcd' );
+		} );
+
+		it( 'Is not displayed if Professional Email is in the cart', () => {
+			isEnabled.mockImplementation( ( flag ) => flag === 'upsell/professional-email' );
+
+			const cart = {
+				products: [
+					{
+						product_slug: TITAN_MAIL_MONTHLY_SLUG,
+					},
+				],
+			};
+
+			const url = getThankYouPageUrl( {
+				...defaultArgs,
+				siteSlug: 'foo.bar',
+				cart,
+				receiptId: '1234abcd',
+			} );
+
+			expect( url ).toBe( '/checkout/thank-you/foo.bar/1234abcd' );
+		} );
+
+		it( 'Is not displayed if Premium plan is in the cart', () => {
+			isEnabled.mockImplementation( ( flag ) => flag === 'upsell/professional-email' );
+
+			const cart = {
+				products: [
+					{
+						product_slug: PLAN_PREMIUM,
+					},
+				],
+			};
+
+			const url = getThankYouPageUrl( {
+				...defaultArgs,
+				siteSlug: 'foo.bar',
+				cart,
+				receiptId: '1234abcd',
+			} );
+
+			expect( url ).toBe( '/checkout/thank-you/foo.bar/1234abcd' );
+		} );
 	} );
 
 	it( 'redirects to thank-you page if jetpack is in the cart', () => {
