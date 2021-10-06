@@ -5,6 +5,7 @@ import { localize } from 'i18n-calypso';
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import FormattedHeader from 'calypso/components/formatted-header';
 import { recordTracksEvent } from 'calypso/lib/analytics/tracks';
 import StepWrapper from 'calypso/signup/step-wrapper';
 import { submitSignupStep } from 'calypso/state/signup/progress/actions';
@@ -101,9 +102,18 @@ class DesignPickerStep extends Component {
 				onSelect={ this.pickDesign }
 				className={ classnames( {
 					'design-picker-step__is-large-thumbnails': this.props.largeThumbnails,
+					'design-picker-step__has-categories': isEnabled( 'signup/design-picker-categories' ),
 				} ) }
 				highResThumbnails
 				showCategoryFilter={ isEnabled( 'signup/design-picker-categories' ) }
+				categoriesHeading={
+					<FormattedHeader
+						id={ 'step-header' }
+						headerText={ this.headerText() }
+						subHeaderText={ this.subHeaderText() }
+						align="left"
+					/>
+				}
 			/>
 		);
 	}
@@ -121,15 +131,13 @@ class DesignPickerStep extends Component {
 
 	render() {
 		const { isReskinned } = this.props;
-		const headerText = this.headerText();
-		const subHeaderText = this.subHeaderText();
 
 		return (
 			<StepWrapper
-				fallbackHeaderText={ headerText }
-				headerText={ headerText }
-				fallbackSubHeaderText={ subHeaderText }
-				subHeaderText={ subHeaderText }
+				className={ classnames( {
+					'design-picker__has-categories': isEnabled( 'signup/design-picker-categories' ),
+				} ) }
+				hideFormattedHeader
 				stepContent={ this.renderDesignPicker() }
 				align={ isReskinned ? 'left' : 'center' }
 				skipButtonAlign={ isReskinned ? 'top' : 'bottom' }

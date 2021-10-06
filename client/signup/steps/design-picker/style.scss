@@ -36,6 +36,14 @@
 		}
 	}
 
+	.step-wrapper.design-picker__has-categories {
+		.step-wrapper__content {
+			@include break-medium {
+				margin-top: 64px;
+			}
+		}
+	}
+
 	// Ugly, but necessary to cancel out some signup styles
 	// without causing regressions to other parts of `/start`
 	button:not( .is-primary ) {
@@ -46,15 +54,27 @@
 		}
 	}
 
-	.design-picker.design-picker-step__is-large-thumbnails {
-		.design-picker__grid {
-			grid-template-columns: 1fr;
+	.design-picker__grid {
+		grid-template-columns: 1fr;
 
+		@include break-medium {
+			grid-template-columns: 1fr 1fr;
+			column-gap: 49px;
+			row-gap: 39px;
+		}
+	}
+
+	.design-picker__has-categories {
+		.design-picker__grid {
 			@include break-medium {
-				grid-template-columns: 1fr 1fr;
-				column-gap: 49px;
-				row-gap: 39px;
+				column-gap: 24px;
+				row-gap: 36px;
 			}
+		}
+
+		.formatted-header__subtitle {
+			// Overrides some very specific selectors in /client/signup/style.scss
+			margin: 12px 0 48px !important;
 		}
 	}
 
