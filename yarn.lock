@@ -37772,6 +37772,7 @@ typescript@^4.4.3:
   version: 0.0.0-use.local
   resolution: "wpcom@workspace:packages/wpcom.js"
   dependencies:
+    "@automattic/calypso-eslint-overrides": ^1.0.0
     "@automattic/calypso-typescript-config": ^1.0.0
     "@babel/runtime": ^7.15.3
     debug: ^4.1.1

@@ -1,17 +1,15 @@
+const nodeConfig = require( '@automattic/calypso-eslint-overrides/node' );
+
+module.exports = {};
+
 module.exports = {
 	env: {
 		browser: true,
 	},
 	overrides: [
 		{
-			files: './examples/server/**/*',
-			env: {
-				node: true,
-			},
-			rules: {
-				'import/no-nodejs-modules': 'off',
-				'no-console': 'off',
-			},
+			files: [ './examples/server/**/*', './examples/node/**/*' ],
+			...nodeConfig,
 		},
 		{
 			files: './test/**/*',
