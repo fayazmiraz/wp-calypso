@@ -29,7 +29,7 @@
 	],
 	"types": "dist/types",
 	"dependencies": {
-		"@babel/runtime": "^7.15.3",
+		"@babel/runtime": "^7.15.4",
 		"@wordpress/components": "^17.0.0",
 		"@wordpress/compose": "^5.0.2",
 		"@wordpress/icons": "^5.0.2",
@@ -45,8 +45,8 @@
 	},
 	"devDependencies": {
 		"@automattic/calypso-typescript-config": "^1.0.0",
-		"@babel/core": "^7.14.8",
-		"@babel/preset-env": "^7.14.8",
+		"@babel/core": "^7.15.8",
+		"@babel/preset-env": "^7.15.8",
 		"@storybook/addon-actions": "^6.3.8",
 		"@storybook/builder-webpack5": "^6.3.8",
 		"@storybook/manager-webpack5": "^6.3.8",
