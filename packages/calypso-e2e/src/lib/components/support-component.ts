@@ -140,16 +140,25 @@ export class SupportComponent {
 	 */
 	async clickResult( category: SupportResultType, target: number ): Promise< void > {
 		let selector: string;
+
 		if ( category === 'article' ) {
 			selector = selectors.results( selectors.supportCategory );
 		} else {
 			selector = selectors.results( selectors.whereCategory );
 		}
 
-		await this.page.click( `:nth-match(${ selector }, ${ target })` );
-		if ( category === 'article' ) {
-			await this.page.click( selectors.readMoreButton );
-		}
+		const elementHandle = await this.page.waitForSelector(
+			`:nth-match(${ selector }, ${ target })`
+		);
+		await elementHandle.waitForElementState( 'stable' );
+		await elementHandle.click();
+	}
+
+	/**
+	 * Clicks on the `Read More` button in the search popover results.
+	 */
+	async readMore(): Promise< void > {
+		await this.page.click( selectors.readMoreButton );
 	}
 
 	/**
