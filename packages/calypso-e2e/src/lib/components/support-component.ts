@@ -4,7 +4,7 @@ type SupportResultType = 'article' | 'where';
 
 const selectors = {
 	// Components
-	supportPopoverButton: '.inline-help__button',
+	supportPopoverButton: ( attribute = '' ) => `button[title="Help"]${ attribute }`,
 	supportPopover: '.inline-help__popover',
 	searchInput: '[aria-label="Search"]',
 	clearSearch: '[aria-label="Close Search"]',
@@ -62,11 +62,12 @@ export class SupportComponent {
 			return;
 		}
 		await Promise.all( [
+			this.waitForQueryComplete(),
 			this.page.waitForResponse(
 				( response ) => response.status() === 200 && response.url().includes( 'language-names?' )
 			),
-			this.page.waitForSelector( selectors.supportPopover ),
-			this.page.click( selectors.supportPopoverButton ),
+			this.page.waitForSelector( selectors.supportPopoverButton( '.is-active' ) ),
+			this.page.click( selectors.supportPopoverButton() ),
 		] );
 	}
 
@@ -79,7 +80,7 @@ export class SupportComponent {
 		if ( await this.page.isHidden( selectors.supportPopover ) ) {
 			return;
 		}
-		await this.page.click( selectors.supportPopoverButton );
+		await this.page.click( selectors.supportPopoverButton() );
 		await this.page.waitForSelector( selectors.supportPopover, { state: 'hidden' } );
 	}
 
@@ -147,11 +148,7 @@ export class SupportComponent {
 			selector = selectors.results( selectors.whereCategory );
 		}
 
-		const elementHandle = await this.page.waitForSelector(
-			`:nth-match(${ selector }, ${ target })`
-		);
-		await elementHandle.waitForElementState( 'stable' );
-		await elementHandle.click();
+		await this.page.click( `:nth-match(${ selector }, ${ target })`, { force: true } );
 	}
 
 	/**
@@ -196,6 +193,8 @@ export class SupportComponent {
 	 * @returns {Promise<void>} No return value.
 	 */
 	async search( text: string ): Promise< void > {
+		await this.page.waitForSelector;
+
 		// Wait for the response to the request and ensure the status is HTTP 200.
 		await Promise.all( [
 			this.page.waitForResponse(
