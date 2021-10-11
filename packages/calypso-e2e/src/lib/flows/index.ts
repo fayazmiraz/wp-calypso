@@ -2,3 +2,4 @@ export * from './login-flow';
 export * from './new-post-flow';
 export * from './gutenboarding-flow';
 export * from './close-account-flow';
+export * from './change-ui-language-flow';
