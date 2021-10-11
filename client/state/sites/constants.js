@@ -68,4 +68,5 @@ export const SITE_REQUEST_OPTIONS = [
 	'woocommerce_is_active',
 	'wordads',
 	'site_creation_flow',
+	'is_difm_lite_in_progress',
 ].join();
