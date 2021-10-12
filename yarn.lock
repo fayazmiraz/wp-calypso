@@ -479,7 +479,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^12.1.1
     "@testing-library/react-hooks": 7.0.2
-    "@types/react": ^17.0.24
+    "@types/react": ^17.0.29
     "@wordpress/compose": ^5.0.2
     "@wordpress/i18n": ^4.2.2
     react: ^17.0.2
@@ -6407,26 +6407,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-redux@npm:^7.1.16, @types/react-redux@npm:^7.1.18":
-  version: 7.1.18
-  resolution: "@types/react-redux@npm:7.1.18"
+"@types/react-redux@npm:^7.1.16, @types/react-redux@npm:^7.1.19":
+  version: 7.1.19
+  resolution: "@types/react-redux@npm:7.1.19"
   dependencies:
     "@types/hoist-non-react-statics": ^3.3.0
     "@types/react": "*"
     hoist-non-react-statics: ^3.3.0
     redux: ^4.0.0
-  checksum: d2caf5a9a11744001237cab91c57ee673caf76add491e86d3eb2db3d571e87fcb90d34f71775a4dfaca9e249c89e822c104fcfc7899c01574c450cb720e3b5bf
+  checksum: 30e3aef3b65922b5ff4c62873cf24e42feac36703cf2cc730af2d4466a17b2f842767ca5a1243815a3f44948810f7c066093fc72661c48511325c94a3c8a48bb
   languageName: node
   linkType: hard
 
-"@types/react-router-dom@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "@types/react-router-dom@npm:5.3.0"
+"@types/react-router-dom@npm:^5.3.1":
+  version: 5.3.1
+  resolution: "@types/react-router-dom@npm:5.3.1"
   dependencies:
     "@types/history": "*"
     "@types/react": "*"
     "@types/react-router": "*"
-  checksum: dd902c7a3205cf198305382469947bc53e113e09dafc37ee42a8a9d9721d518ef857641f87f0d0e6fdb7550721fd12c72a8060034f2375247e426417a38d433e
+  checksum: f0c88092ea385ca12e450f752965d032b08e03761b21cae4cf18c361aa6a80ea9b56097e62499a3ea8ac8fe7a61ad3891e1a6ccb8fb78b5b563ba603a193a02f
   languageName: node
   linkType: hard
 
@@ -6467,14 +6467,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.24":
-  version: 17.0.24
-  resolution: "@types/react@npm:17.0.24"
+"@types/react@npm:^17.0.29":
+  version: 17.0.29
+  resolution: "@types/react@npm:17.0.29"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 823fcaa1196647160b03cd617ebbd2ffbba9af2da052b46955dbefbe0b40c119fa57f21f1fa22151dfeaaa4870781147f42765ea60ac93eb0d087099d8eeb9c8
+  checksum: 71b9d6295646ff2e8da386aef97372e7f3923268b8a9465ca21139f7c89b1eda0877a7295e6361da2a13f3e7d2810a03a0dd03c7f5b2db0bf9ce099f9267051c
   languageName: node
   linkType: hard
 
@@ -6666,9 +6666,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/wordpress__components@npm:*, @types/wordpress__components@npm:^14.0.3":
-  version: 14.0.3
-  resolution: "@types/wordpress__components@npm:14.0.3"
+"@types/wordpress__components@npm:*, @types/wordpress__components@npm:^14.0.4":
+  version: 14.0.4
+  resolution: "@types/wordpress__components@npm:14.0.4"
   dependencies:
     "@types/react": "*"
     "@types/tinycolor2": "*"
@@ -6678,7 +6678,7 @@ __metadata:
     "@wordpress/element": ^3.0.0
     downshift: ^6.0.15
     re-resizable: ^6.4.0
-  checksum: e5149301bcec003f9d1109ed6eb648b4dcc5d94f7c91319739512ba1b3fcbac2170e5e3d1cd75f46e00c48d656d4235684039c9dd95fd058f1573fd999415a01
+  checksum: a743dcdac860d9a117a0c6dc5b3f22f63fc9fd14e23b4fd8b29f5cd854969d4d168e77caa4762aad723e84b5f904eea3cfaccbe02793ef6b31a0e0d96419c9a5
   languageName: node
   linkType: hard
 
@@ -37517,10 +37517,10 @@ typescript@^4.4.3:
     "@types/node": ^15.0.2
     "@types/page": ^1.11.5
     "@types/qs": ^6.9.7
-    "@types/react": ^17.0.24
+    "@types/react": ^17.0.29
     "@types/react-modal": ^3.12.1
-    "@types/react-redux": ^7.1.18
-    "@types/react-router-dom": ^5.3.0
+    "@types/react-redux": ^7.1.19
+    "@types/react-router-dom": ^5.3.1
     "@types/react-transition-group": ^4.4.3
     "@types/uuid": ^8.3.1
     "@types/validator": ^13.6.3
@@ -37528,7 +37528,7 @@ typescript@^4.4.3:
     "@types/wordpress__api-fetch": ^3.2.4
     "@types/wordpress__block-editor": ^6.0.4
     "@types/wordpress__block-library": ^2.6.1
-    "@types/wordpress__components": ^14.0.3
+    "@types/wordpress__components": ^14.0.4
     "@types/wordpress__compose": ^4.0.0
     "@types/wordpress__data": ^4.6.10
     "@types/wordpress__data-controls": ^1.0.5

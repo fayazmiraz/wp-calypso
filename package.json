@@ -160,10 +160,10 @@
 		"@types/node": "^15.0.2",
 		"@types/page": "^1.11.5",
 		"@types/qs": "^6.9.7",
-		"@types/react": "^17.0.24",
+		"@types/react": "^17.0.29",
 		"@types/react-modal": "^3.12.1",
-		"@types/react-redux": "^7.1.18",
-		"@types/react-router-dom": "^5.3.0",
+		"@types/react-redux": "^7.1.19",
+		"@types/react-router-dom": "^5.3.1",
 		"@types/react-transition-group": "^4.4.3",
 		"@types/uuid": "^8.3.1",
 		"@types/validator": "^13.6.3",
@@ -171,7 +171,7 @@
 		"@types/wordpress__api-fetch": "^3.2.4",
 		"@types/wordpress__block-editor": "^6.0.4",
 		"@types/wordpress__block-library": "^2.6.1",
-		"@types/wordpress__components": "^14.0.3",
+		"@types/wordpress__components": "^14.0.4",
 		"@types/wordpress__compose": "^4.0.0",
 		"@types/wordpress__data": "^4.6.10",
 		"@types/wordpress__data-controls": "^1.0.5",
@@ -314,7 +314,7 @@
 	"resolutions": {
 		"@automattic/newspack-blocks/swiper@4.5.1": "patch:swiper@4.5.1#.patches/swiper@4.5.1.diff",
 		"@automattic/newspack-blocks/prettier": "npm:wp-prettier@2.2.1-beta-1",
-		"@types/react": "^17.0.24"
+		"@types/react": "^17.0.29"
 	},
 	"packageManager": "yarn@3.0.0"
 }
