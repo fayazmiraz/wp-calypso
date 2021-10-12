@@ -1,5 +1,4 @@
 import { isEnabled } from '@automattic/calypso-config';
-import { isJetpackProduct } from '@automattic/calypso-products';
 import { useShoppingCart } from '@automattic/shopping-cart';
 import {
 	createApplePayMethod,
@@ -441,14 +440,12 @@ export default function useCreatePaymentMethods( {
 	const shouldUseEbanx = responseCart.allowed_payment_methods.includes(
 		translateCheckoutPaymentMethodToWpcomPaymentMethod( 'ebanx' ) ?? ''
 	);
-	const allowUseForAllSubscriptions = ! responseCart.products.some( isJetpackProduct );
 	const stripeMethod = useCreateCreditCard( {
 		isStripeLoading,
 		stripeLoadingError,
 		stripeConfiguration,
 		stripe,
 		shouldUseEbanx,
-		allowUseForAllSubscriptions,
 	} );
 
 	const fullCreditsPaymentMethod = useCreateFullCredits();
